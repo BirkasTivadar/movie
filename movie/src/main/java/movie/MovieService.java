@@ -1,7 +1,6 @@
 package movie;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class MovieService {
 
@@ -11,12 +10,13 @@ public class MovieService {
         movies.add(movie);
     }
 
-
-    public List<Movie> searchByPartOfName(String part) {
-        return movies.stream().filter(m -> m.getName().contains(part)).collect(Collectors.toList());
+    public Movie getLatestMovie() {
+        Movie result = movies.get(0);
+        for (Movie m : movies) {
+            if (m.getReleaseDate().isAfter(result.getReleaseDate())) {
+                result = m;
+            }
+        }
+        return result;
     }
-
 }
-/*
-. Legyen még benne két metódus: + Keressük meg a legújabb filmet! + Keressünk filmet névtöredék alapján!
- */
