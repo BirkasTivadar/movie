@@ -16,5 +16,4 @@ class MovieTest {
         assertEquals(134, dieHard.getLength());
         assertEquals(LocalDate.of(1992,10,11), dieHard.getReleaseDate());
     }
-
 }
