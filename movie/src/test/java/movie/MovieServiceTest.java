@@ -23,6 +23,9 @@ class MovieServiceTest {
 
     @Test
     void save() {
+        movieService.save(new Movie("Egri csillagok", 134, LocalDate.of(1968, 10, 2)));
+
+        Assertions.assertTrue(movieService.getMovies().contains(new Movie("Egri csillagok", 134, LocalDate.of(1968, 10, 2))));
     }
 
     @Test

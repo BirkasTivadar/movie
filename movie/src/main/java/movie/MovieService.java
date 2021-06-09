@@ -8,6 +8,10 @@ public class MovieService {
 
     private List<Movie> movies = new ArrayList<>();
 
+    public List<Movie> getMovies() {
+        return new ArrayList<>(movies);
+    }
+
     public void save(Movie movie) {
         movies.add(movie);
     }
