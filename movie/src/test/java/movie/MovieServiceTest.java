@@ -31,10 +31,10 @@ class MovieServiceTest {
     }
 
     @Test
-    void searchByPartOfName() {
+    void testSearchByPartOfName() {
         List<Movie> result = movieService.searchByPartOfName("et");
 
         assertEquals(1, result.size());
-
+        assertEquals("Pretty Woman", result.get(0).getName());
     }
 }
