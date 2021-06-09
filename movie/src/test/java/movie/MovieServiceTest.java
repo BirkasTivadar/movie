@@ -1,5 +1,6 @@
 package movie;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,7 @@ class MovieServiceTest {
     public void init() {
         movieService.save(new Movie("Die Hard", 134, LocalDate.of(1992, 11, 13)));
         movieService.save(new Movie("Pretty Woman", 115, LocalDate.of(1996, 1, 13)));
-        movieService.save(new Movie("Inudl a bakterház", 119, LocalDate.of(1983, 4, 3)));
+        movieService.save(new Movie("Indul a bakterház", 119, LocalDate.of(1983, 4, 3)));
     }
 
 
@@ -25,6 +26,7 @@ class MovieServiceTest {
 
     @Test
     void getLatestMovie() {
+        Assertions.assertEquals("Pretty Woman", movieService.getLatestMovie().getName());
     }
 
     @Test
