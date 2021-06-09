@@ -1,6 +1,7 @@
 package movie;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MovieService {
 
@@ -8,6 +9,11 @@ public class MovieService {
 
     public void save(Movie movie) {
         movies.add(movie);
+    }
+
+
+    public List<Movie> searchByPartOfName(String part) {
+        return movies.stream().filter(m -> m.getName().contains(part)).collect(Collectors.toList());
     }
 
 }
