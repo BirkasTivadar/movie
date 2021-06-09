@@ -20,6 +20,3 @@ public class MovieService {
         return result;
     }
 }
-/*
-. Legyen még benne két metódus: + Keressük meg a legújabb filmet! + Keressünk filmet névtöredék alapján!
- */
