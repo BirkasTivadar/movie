@@ -10,6 +10,15 @@ public class MovieService {
         movies.add(movie);
     }
 
+    public Movie getLatestMovie() {
+        Movie result = movies.get(0);
+        for (Movie m : movies) {
+            if (m.getReleaseDate().isAfter(result.getReleaseDate())) {
+                result = m;
+            }
+        }
+        return result;
+    }
 }
 /*
 . Legyen még benne két metódus: + Keressük meg a legújabb filmet! + Keressünk filmet névtöredék alapján!
